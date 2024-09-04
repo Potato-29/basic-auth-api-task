@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "1eadfe2d-ab7f-4163-bbad-06e1c0815b7e",
+		"name": "Automateazy Assignment",
+		"description": "This is the collection for my assignment that I developed for automateazy, please click on view complete documentation to proceed further, hope you like it :)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34265348"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Thunder Client (https://www.thunderclient.com)"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"\", //optional\n  \"email\": \"\",\n  \"password\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				},
+				"description": "This API allows a new user to create an account by providing their email and password. An optional username can also be included in the request. Upon successful registration, the API will return a confirmation message along with the newly created user's details.\n\nENDPOINT: /auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Thunder Client (https://www.thunderclient.com)"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"\",\n  \"password\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "This API allows an existing user to authenticate by providing their email and password. Upon successful authentication, the API returns a token that can be used to access protected resources.\n\nENDPOINT: /auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Thunder Client (https://www.thunderclient.com)"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <token>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"me"
+					]
+				},
+				"description": "This API allows a user to get fetch their information if they have a valid token in the Auth headers of the req\n\nENDPOINT: /auth/me"
+			},
+			"response": []
+		}
+	]
+}
