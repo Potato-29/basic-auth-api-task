@@ -12,7 +12,7 @@ const validateCredentials = (email, password) => {
 
   const { error: emailError } = emailSchema.validate(email);
   if (emailError) {
-    return { error: "Invalid email" };
+    return { error: "The email you entered is invalid." };
   }
 
   const { error: passwordError } = passwordSchema.validate(password);
